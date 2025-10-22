@@ -1,0 +1,16 @@
+services:
+  database:
+    image: postgres:15
+    container_name: finance-sitter
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: finance_db   # opcional: cria o DB automaticamente
+    ports:
+      - "5432:5432"
+    volumes:
+      - fs-data-sql:/var/lib/postgresql/data
+
+volumes:
+  fs-data-sql:
