@@ -10,7 +10,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - fs-data-sql:/var/lib/postgresql/data
+      - fs-data:/var/lib/postgresql/data
 
 volumes:
-  fs-data-sql:
+  fs-data:
