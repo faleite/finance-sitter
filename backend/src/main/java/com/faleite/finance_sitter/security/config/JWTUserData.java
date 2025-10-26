@@ -1,4 +1,4 @@
-package com.faleite.finance_sitter.config;
+package com.faleite.finance_sitter.security.config;
 
 public record JWTUserData(Long userId, String email) {
 

@@ -1,4 +1,4 @@
-package com.faleite.finance_sitter.config;
+package com.faleite.finance_sitter.security.config;
 
 import com.faleite.finance_sitter.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;

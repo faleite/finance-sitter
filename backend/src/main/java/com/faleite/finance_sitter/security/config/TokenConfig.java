@@ -1,4 +1,4 @@
-package com.faleite.finance_sitter.config;
+package com.faleite.finance_sitter.security.config;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -23,7 +23,7 @@ public class TokenConfig {
         return JWT.create()
                 .withClaim("userId", user.getId())
                 .withSubject(user.getEmail())
-                .withExpiresAt(Instant.now().plusSeconds(86400))
+                .withExpiresAt(Instant.now().plusSeconds(3600)) // 86400 = 24h, 43200 = 12h, 3600 = 1h
                 .withIssuedAt(Instant.now())
                 .sign(algorithm);
     }

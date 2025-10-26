@@ -15,16 +15,24 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false, unique = false, length = 100)
     private String email;
+
+    @Column(nullable = false)
     private String password;
+
+    private Double monthlyLimit;
 
     public User() {
     }
 
-    public User(String name, String email, String password) {
+    public User(String name, String email, Double monthlyLimit, String password) {
         this.name = name;
         this.email = email;
+        this.monthlyLimit = monthlyLimit;
         this.password = password;
     }
 
@@ -38,6 +46,14 @@ public class User implements UserDetails {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Double getMonthlyLimit() {
+        return monthlyLimit;
+    }
+
+    public void setMonthlyLimit(Double monthlyLimit) {
+        this.monthlyLimit = monthlyLimit;
     }
 
     @Override

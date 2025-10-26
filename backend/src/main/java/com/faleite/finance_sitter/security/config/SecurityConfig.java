@@ -1,4 +1,4 @@
-package com.faleite.finance_sitter.config;
+package com.faleite.finance_sitter.security.config;
 
 import jakarta.servlet.DispatcherType;
 import org.springframework.context.annotation.Bean;

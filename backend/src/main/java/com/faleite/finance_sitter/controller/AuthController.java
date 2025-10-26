@@ -1,10 +1,11 @@
 package com.faleite.finance_sitter.controller;
 
-import com.faleite.finance_sitter.config.TokenConfig;
-import com.faleite.finance_sitter.dto.request.LoginRequest;
-import com.faleite.finance_sitter.dto.request.RegisterUserRequest;
-import com.faleite.finance_sitter.dto.response.LoginResponse;
-import com.faleite.finance_sitter.dto.response.RegisterUserResponse;
+import com.faleite.finance_sitter.security.config.TokenConfig;
+import com.faleite.finance_sitter.security.dto.dto.request.LoginRequest;
+import com.faleite.finance_sitter.security.dto.dto.request.RegisterUserRequest;
+import com.faleite.finance_sitter.security.dto.dto.response.LoginResponse;
+import com.faleite.finance_sitter.security.dto.dto.response.RegisterUserResponse;
+import com.faleite.finance_sitter.exceptions.BusinessException;
 import com.faleite.finance_sitter.model.User;
 import com.faleite.finance_sitter.repository.UserRepository;
 import jakarta.validation.Valid;
@@ -48,7 +49,12 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<RegisterUserResponse> register(@Valid @RequestBody RegisterUserRequest request) {
+    public ResponseEntity<?> register(@Valid @RequestBody RegisterUserRequest request) {
+
+        if (userRepository.existsByEmail(request.email())) {
+            throw new BusinessException("E-mail already exists.");
+        }
+
         User newUser = new User();
         newUser.setPassword(passwordEncoder.encode(request.password()));
         newUser.setEmail(request.email());
