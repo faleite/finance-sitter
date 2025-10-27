@@ -1,4 +1,4 @@
-CREATE TABLE expense(
+CREATE TABLE expenses(
     id serial PRIMARY KEY,
     user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     expense_date DATE NOT NULL,

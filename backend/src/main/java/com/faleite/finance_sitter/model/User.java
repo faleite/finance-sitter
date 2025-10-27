@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.List;
 
@@ -24,12 +25,13 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String password;
 
-    private Double monthlyLimit;
+    @Column(name = "monthly_limit", precision = 14, scale = 2)
+    private BigDecimal monthlyLimit = BigDecimal.ZERO;
 
     public User() {
     }
 
-    public User(String name, String email, Double monthlyLimit, String password) {
+    public User(String name, String email, BigDecimal monthlyLimit, String password) {
         this.name = name;
         this.email = email;
         this.monthlyLimit = monthlyLimit;
@@ -48,11 +50,11 @@ public class User implements UserDetails {
         this.name = name;
     }
 
-    public Double getMonthlyLimit() {
+    public BigDecimal getMonthlyLimit() {
         return monthlyLimit;
     }
 
-    public void setMonthlyLimit(Double monthlyLimit) {
+    public void setMonthlyLimit(BigDecimal monthlyLimit) {
         this.monthlyLimit = monthlyLimit;
     }
 
