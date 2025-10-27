@@ -1,4 +1,4 @@
-package com.faleite.finance_sitter.security.dto.dto.request;
+package com.faleite.finance_sitter.security.dto.request;
 
 import jakarta.validation.constraints.NotEmpty;
 

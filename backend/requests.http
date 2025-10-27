@@ -1,6 +1,6 @@
 ### GET request to example server
 GET http://localhost:8080/test
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInN1YiI6ImRldmZhbGVpdGVAZ21haWwuY29tIiwiZXhwIjoxNzYxMzExNzEyLCJpYXQiOjE3NjEzMDgxMTJ9._4NToOQvSODLWI5FrI1gQxqjxBgcrlPE1AvXEg99OZA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInN1YiI6ImRldmZhbGVpdGVAZ21haWwuY29tIiwiZXhwIjoxNzYxNTk3MDkxLCJpYXQiOjE3NjE1OTM0OTF9.1PGlXjFVLtji1PewZX825LVhlpDnUVVs-LIIzDrOpjs
 
 ###
 GET http://localhost:8080/test

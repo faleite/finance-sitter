@@ -1,10 +1,10 @@
 package com.faleite.finance_sitter.controller;
 
 import com.faleite.finance_sitter.security.config.TokenConfig;
-import com.faleite.finance_sitter.security.dto.dto.request.LoginRequest;
-import com.faleite.finance_sitter.security.dto.dto.request.RegisterUserRequest;
-import com.faleite.finance_sitter.security.dto.dto.response.LoginResponse;
-import com.faleite.finance_sitter.security.dto.dto.response.RegisterUserResponse;
+import com.faleite.finance_sitter.security.dto.request.LoginRequest;
+import com.faleite.finance_sitter.security.dto.request.RegisterUserRequest;
+import com.faleite.finance_sitter.security.dto.response.LoginResponse;
+import com.faleite.finance_sitter.security.dto.response.RegisterUserResponse;
 import com.faleite.finance_sitter.exceptions.BusinessException;
 import com.faleite.finance_sitter.model.User;
 import com.faleite.finance_sitter.repository.UserRepository;
@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/auth/v1")
 public class AuthController {
 
     private final UserRepository userRepository;
